@@ -217,20 +217,7 @@
 
   layout();
   restart();
-/* ---------- Two-finger trackpad scroll: courses ---------- */
-let cAcc = 0, cLock = false;
-viewport.addEventListener('wheel', e => {
-  if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // vertical = normal page scroll
-  e.preventDefault();
-  if (cLock) return;
-  cAcc += e.deltaX;
-  if (Math.abs(cAcc) > 60) {
-    cAcc > 0 ? next() : prev();
-    restart();
-    cAcc = 0; cLock = true;
-    setTimeout(() => cLock = false, 450);
-  }
-}, { passive: false });
+
   /* ============================================================
      COUNTERS
      ============================================================ */
@@ -280,20 +267,6 @@ viewport.addEventListener('wheel', e => {
   $('#testiSlider').addEventListener('mouseleave', tRestart);
   window.addEventListener('resize', tBuild);
   tBuild(); tRestart();
-  /* ---------- Two-finger trackpad scroll: testimonials ---------- */
-let tAcc = 0, tLock = false;
-$('#testiSlider').addEventListener('wheel', e => {
-  if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
-  e.preventDefault();
-  if (tLock) return;
-  tAcc += e.deltaX;
-  if (Math.abs(tAcc) > 60) {
-    if (tAcc > 0) { tNext(); } else { tIndex = tIndex <= 0 ? tMax() : tIndex - 1; tMove(); }
-    tRestart();
-    tAcc = 0; tLock = true;
-    setTimeout(() => tLock = false, 450);
-  }
-}, { passive: false });
 
   /* ============================================================
      GALLERY LIGHTBOX
@@ -360,7 +333,7 @@ $('#testiSlider').addEventListener('wheel', e => {
     e.preventDefault();
     const a = document.createElement('a');
     a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(
-      'NIFS — National Institute of Fire & Safety\n==========================================\n\nPrograms:\n• Fire & Safety Management — 1 Year\n• Industrial Safety — 6 Months\n• Disaster Management — 1 Year\n• OSHA Certification — 3 Months\n• NEBOSH Training — 6 Months\n• HSE Professional — 1 Year\n\nAdmissions: admissions@nifsindia.in | +91 98765 43210\nCampus: Haridwar Road, Dehradun, Uttarakhand 248001');
+      'NIFS — National Institute of Fire & Safety\n==========================================\n\nPrograms:\n• Fire & Safety Management — 1 Year\n• Industrial Safety — 6 Months\n• Disaster Management — 1 Year\n• OSHA Certification — 3 Months\n• NEBOSH Training — 6 Months\n• HSE Professional — 1 Year\n\nAdmissions: admissions@nifsindia.in | +91 98979 90861 | 0135-2645802\nCampus: Haridwar Road, Dehradun, Uttarakhand 248001');
     a.download = 'NIFS-Brochure.txt';
     a.click();
   });
