@@ -627,8 +627,7 @@ section{scroll-margin-top:calc(var(--header-h) + var(--announce-h))}
 }
 .to-top.show{opacity:1;visibility:visible;transform:none}
 .to-top:hover{transform:translateY(-4px) scale(1.06)}
-.m-art{position:relative}
-.m-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -681,3 +680,33 @@ section{scroll-margin-top:calc(var(--header-h) + var(--announce-h))}
 .course-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .6s var(--ease)}
 .course-card:hover .course-photo{transform:scale(1.12)}
 .course-img::after{z-index:2}
+
+/* gallery photos (fallback: colored tile if file missing) */
+.m-art{position:relative}
+.m-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ===== certifications: 6 cards (3 x 2) ===== */
+.cert-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1100px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== partner logo images ===== */
+.p-logo img{height:34px;max-width:130px;object-fit:contain;display:block}
+
+/* ===== congratulations / recent selections ===== */
+.congrats{background:linear-gradient(180deg,#fff,var(--gray))}
+.congrats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.congrat-card{border-radius:var(--r-lg);padding:26px 20px;text-align:center;transition:transform .4s var(--ease),box-shadow .4s}
+.congrat-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.cg-photo{position:relative;width:92px;height:92px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:1.5rem;color:#fff;background:linear-gradient(135deg,var(--a1),var(--a2));overflow:hidden;border:3px solid #fff;box-shadow:0 10px 24px rgba(227,30,36,.22)}
+.cg-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.congrat-card h3{font-size:1.02rem}
+.cg-course{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--red);background:rgba(227,30,36,.08);border-radius:100px;padding:3px 12px;margin:6px 0 8px}
+.congrat-card p{font-size:.8rem;color:var(--ink-soft);margin-bottom:10px}
+@media (max-width:1100px){.congrats-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.congrats-grid{grid-template-columns:1fr}}
+
+/* ===== approvals strip ===== */
+.approvals{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;justify-content:center;margin-top:44px;padding:20px 26px;border-radius:var(--r-md);background:var(--gray);border:1px solid var(--line)}
+.approvals span{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.approvals strong{font-size:.88rem;color:var(--ink-soft);font-weight:600}
