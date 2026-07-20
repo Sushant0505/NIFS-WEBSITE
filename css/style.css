@@ -668,6 +668,9 @@ section{scroll-margin-top:calc(var(--header-h) + var(--announce-h))}
   .float-shape{font-size:1.15rem}
   .section{padding:60px 0}
 }
+/* ===== powered by ===== */
+.powered a{color:var(--orange);font-weight:600;transition:color .3s}
+.powered a:hover{color:#fff}
 
 /* reduced motion */
 @media (prefers-reduced-motion:reduce){
