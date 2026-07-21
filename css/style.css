@@ -627,6 +627,38 @@ section{scroll-margin-top:calc(var(--header-h) + var(--announce-h))}
 }
 .to-top.show{opacity:1;visibility:visible;transform:none}
 .to-top:hover{transform:translateY(-4px) scale(1.06)}
+.approval-item {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+}
+
+.approval-item img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 12px; /* Space between logo and text */
+    animation: pulse 2.5s infinite;
+}
+
+.approval-item p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
 
 /* ============================================================
    RESPONSIVE
